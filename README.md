@@ -144,6 +144,10 @@ Large-scale in-place sed maniulations:
 		sed -i 's|^#!/usr/bin/python|#!/usr/bin/python2|' "$file"
 	done
 
+Perl-style regexes:
+
+	$ grep -RPoh "\(\d{3}\) \d{3} \d{4}" phone-numbers | less
+
 Locating files:
 
 	# updatedb
