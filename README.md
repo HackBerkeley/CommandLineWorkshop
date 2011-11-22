@@ -141,7 +141,7 @@ Combining files and dumping:
 
 	$ cat phone-numbers/*.log > logs.log
 
-Large-scale in-place sed maniulations:
+Large-scale in-place sed manipulations:
 
 	$ for file in $(find . -name '*.py' -print); do
 		sed -i 's|^#!/usr/bin/python|#!/usr/bin/python2|' "$file"
