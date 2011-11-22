@@ -5,6 +5,8 @@ This talk is designed to expose you to a few important Unix tools. We'll be cove
 Let's get started. 
 
 ### Why Unix?
+(Demo `screen` for instructional account users.)
+
 Here's a Google weeder question: how would you recursively extract up to 50,000 valid phone numbers from a directory containing various types of files?
 
 Browse through CommandLineWorkshop/phone-numbers. There are .log and .html files. Some directories contain sub-directories. The .html files don't seem to make any sense, so parsing them may be hard. The phone numbers aren't homogenous. 
