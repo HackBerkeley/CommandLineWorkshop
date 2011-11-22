@@ -158,6 +158,10 @@ http://www.grymoire.com/Unix/
 
 http://www.catonmat.net/books/
 
+http://news.ycombinator.com/item?id=3257393
+
+http://www.commandlinefu.com/commands/browse/sort-by-votes
+
 http://blog.interlinked.org/tutorials/vim_tutorial.html
 
 http://www.tuxfiles.org/linuxhelp/vimcheat.html
