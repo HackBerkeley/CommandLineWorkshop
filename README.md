@@ -47,6 +47,7 @@ What if we want to print the line numbers of each matching phone number? Easy:
 What if we want to count the number of valid phone numbers? No problem:
 
 	$ grep -RE "\([0-9]{3}\) [0-9]{3} [0-9]{4}" phone-numbers | wc -l
+	12442
 
 What if we want _just_ the number, not the cruft surrounding it? Simple enough:
 
@@ -104,9 +105,53 @@ We made `sed` be very picky. It will only put quotes around the first group it f
 	(123) 456 7890
 	123-456-7890
 
-Now that we can convert one phone number, we can convert all of them and dump the result into a file:
+If that's too complicated, you can simply replace the spaces with dashes and remove parens:
 
-	$ grep -REoh "\([0-9]{3}\) [0-9]{3} [0-9]{4}" phone-numbers | sed 's|(\([0-9]\{3\}\)) \([0-9]\{3\}\) \([0-9]\{4\}\)|\1-\2-\3|' > phone-numbers/output.txt
+	$ sed -e 's| |-|g' -e 's|(||' -e 's|)||'
+
+Now that we can convert one phone number, we can convert all of them:
+
+	$ grep -REoh "\([0-9]{3}\) [0-9]{3} [0-9]{4}" phone-numbers | sed -e 's| |-|g' -e 's|(||' -e 's|)||' > phone-numbers/output.txt
 	$ less output.txt
 
 Et voila.
+
+### Vim
+* edit mode: dw, yw, x, cw, p (N, $, ^)
+* insert mode: a, o, i, Esc
+* visual mode: v
+* searching and replacing (/, :%s/foo/bar/gc)
+* repeating tasks (.)
+* indenting blocks (n>>, n<<)
+* navigation: h j k l b w :N $ ^ f
+
+### Extras
+Inverted matching with anything:
+
+	$ ps aux | grep -v "/usr/"
+
+Case-insensitive recursive grep:
+
+	$ grep -Rin WeirdFunction Codebase/
+
+Combining files and dumping:
+
+	$ cat phone-numbers/*.log > logs.log
+
+Large-scale in-place sed maniulations:
+
+	$ for file in $(find . -name '*.py' -print); do
+		sed -i 's|^#!/usr/bin/python|#!/usr/bin/python2|' "$file"
+	done
+
+Locating files:
+
+	# updatedb
+	$ locate name
+
+### Resources
+http://www.grymoire.com/Unix/
+http://www.catonmat.net/books/
+http://blog.interlinked.org/tutorials/vim_tutorial.html
+http://www.tuxfiles.org/linuxhelp/vimcheat.html
+
