@@ -126,6 +126,7 @@ Et voila.
 * repeating tasks (.)
 * indenting blocks (n>>, n<<)
 * navigation: h j k l b w :N $ ^ f
+* badass mode: -O, ctl+ww
 
 ### Extras
 Inverted matching with anything:
