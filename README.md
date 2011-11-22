@@ -151,7 +151,10 @@ Locating files:
 
 ### Resources
 http://www.grymoire.com/Unix/
+
 http://www.catonmat.net/books/
+
 http://blog.interlinked.org/tutorials/vim_tutorial.html
+
 http://www.tuxfiles.org/linuxhelp/vimcheat.html
 
