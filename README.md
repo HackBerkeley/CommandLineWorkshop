@@ -15,7 +15,8 @@ Most interviewees either write gigantic, buggy C programs or give up. There's a 
 
 Let's define a phone number like this: "(nnn) nnn nnnn". Now we can use the following regex to match entries: "\([0-9]{3}\) [0-9]{3} [0-9]{4}". Let's use `grep` to test things out.
 
-	$ grep -E "\([0-9]{3}\) [0-9]{3} [0-9]{4}"                                                                                                       
+	$ grep -P "\(\d{3}\) \d{3} \d{4}" 
+
 	1234567890 	# Fails.
 	123 456 7890 	# Fails.
 	123 4567 890 	# Fails.
